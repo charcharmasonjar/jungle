@@ -77,7 +77,7 @@ cat1.products.create!({
 
 cat1.products.create!({
   name:  'Human Feet Shoes',
-  description: Faker::Hipster.paragraph(4),
+  description: "Asymmetrical lomo wes anderson meggings lumbersexual. Wayfarers put a🅰️ 🐔bird🐔 on🔛 it🇮🇹 paleo twee disrupt aesthetic pinterest 5️⃣five5️⃣ dollar💳 🍞toast🍞🍞. Single-origin coffee ☕️ tofu salvia 🏣post🏣-😼ironic😼 trust fund. 3🕒 wolf🐺 moon🌛 listicle celiac gastropub 🔧diy🔧 cardigan taxidermy. Vice ugh mumblecore yolo humblebrag street butcher.",
   image: open_asset('apparel6.jpg'),
   quantity: 82,
   price: 224.50
