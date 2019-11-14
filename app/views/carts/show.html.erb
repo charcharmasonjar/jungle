@@ -1,8 +1,12 @@
 <section class="cart-show">
 
-  <header class="page-header">
-    <h1>My Cart</h1>
-  </header>
+<% if enhanced_cart.length > 0 %>
+
+
+
+<header class="page-header">
+  <h1>My Cart</h1>
+</header>
 
   <div class="panel panel-default items">
     <table class="table table-bordered">
@@ -50,3 +54,10 @@
   </div>
 
 </section>
+
+<% else %>
+
+<h3 class="alert alert-info">Your cart is currently empty.</h3>
+<%= link_to 'Start Shopping!', root_path %>
+
+<% end %>
