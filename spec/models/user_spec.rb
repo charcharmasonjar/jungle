@@ -33,21 +33,31 @@ RSpec.describe User, type: :model do
   end
 
   describe '.authenticate_with_credentials' do
-    user1 = User.create(
+    let!(:user) { User.create(
       name: "yeet", 
       email: "bby@im.bby", 
       password: "yeet", 
       password_confirmation: "yeet"
-    )
+    ) }
 
     it 'should not be valid if email already exists' do
-      @me = User.new(
+      @user2 = User.new(
         name: "yeet", 
         email: "bby@im.bby", 
         password: "yeet", 
         password_confirmation: "yeet"
       )
-      expect(@me).to_not be_valid
+      expect(@user2).to_not be_valid
+    end
+
+    it 'should be valid if there are spaces around email' do
+      result = User.authenticate_with_credentials('  bby@im.bby  ', 'yeet')
+      expect(result).to be_valid
+    end
+
+    it 'should be valid if the user types their email in the wrong case' do
+      result = User.authenticate_with_credentials('bBy@iM.bBy', 'yeet')
+      expect(result).to be_valid
     end
   end
 
